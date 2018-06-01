@@ -80,9 +80,7 @@ void getStopWords(char *ignoreWordFileName, vector<string> &_vecIgnoreWords){
 				_vecIgnoreWords[i] = stopWord;
 				i++;
 				}
-
 		}
-
 	}
 	myFile.close();
 }
@@ -94,12 +92,8 @@ bool checkStopWord(vector<string> &_vecIgnoreWords, string word1){
 			test = true;
 		}
 	}
-
 	return test;
-
 }
-
-
 int storeUniqueWords(vector<string> &_vecIgnoreWords, string filename, wordItem *&Unique){
 	int doubleCount = 0;
 	int j = 0;
@@ -158,21 +152,11 @@ int storeUniqueWords(vector<string> &_vecIgnoreWords, string filename, wordItem 
 						delete [] Unique;
 
 						Unique = temp;
-
-
 					}
-
-
 					}
-
-		
-
 			}
-
 		}
-
 	}
-
 	hungerGames.close();
 	return doubleCount;
 }
@@ -200,7 +184,6 @@ int getTotalNumberNonStopWords(wordItem list[], int length){
 	return total;
 
 }
-
 void arraySort(wordItem list[], int length){
 
 	//Bubble Sort Algorithm
@@ -210,31 +193,20 @@ void arraySort(wordItem list[], int length){
 		for(int j=length; j>0; j--){
 
 			if(list[j-1].count < list[j].count){
-
 				wordItem x = list[j];
-
 				list[j] = list[j-1];
-
 				list[j-1] = x;
-
 			}
-
 		}
     i++;
 	}
-
 }
 
 void printTopN(wordItem wordItemList[], int topN){
 	for (int i = 0; i < topN; i++){
-
 		cout << wordItemList[i].count  << " - " << wordItemList[i].word << endl;
-
 	}
-
-
 }
-
 
 int UniqueNonStopWords(wordItem list[], int length){
 	int counter = 0;
@@ -242,8 +214,6 @@ int UniqueNonStopWords(wordItem list[], int length){
 		if(list[i].count > 0){
 			counter++;
 		}
-
 	}
-
 	return counter;
 }
